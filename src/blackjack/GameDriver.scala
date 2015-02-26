@@ -1,13 +1,8 @@
 package blackjack
 import akka.actor._
+import Messages._
 
-case class StartGame(val game_name:String)
-case class InitializeDeck(val noOfDecks:Integer)
-case class ShuffleDeck(val deckId :Integer)
-case class GetCards(val numOfCards : Integer)
-case class JoinGameOfThisDealer(val dealer : ActorRef)
-
-object BlackJack {
+object GameDriver {
   def main(args : Array[String])
   {
     println("Lets create the game Black Jack using Scala and Akka!")
@@ -17,7 +12,7 @@ object BlackJack {
     val player2 = blackjack.actorOf(Props(classOf[Player],"Neel"),"Neel")
     player1 ! JoinGameOfThisDealer(dealer)
     player2 ! JoinGameOfThisDealer(dealer)
-    Thread.sleep(2000)
+    Thread.sleep(1000)
     dealer ! StartGame("Game#1")
   }
 }

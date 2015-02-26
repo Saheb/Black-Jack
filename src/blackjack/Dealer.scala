@@ -4,12 +4,7 @@ import akka.actor._
 import scala.collection.mutable.Map
 import scala.collection.mutable.Queue
 
-case class JoinGame(val player:ActorRef)
-case class LeaveGame(val player:ActorRef)
-case object Play
-case object Begin
-case object Busted
-case object ShowStatus
+import blackjack.Messages._
 
 class Dealer(val gameName : String) extends Actor with ActorLogging{
   

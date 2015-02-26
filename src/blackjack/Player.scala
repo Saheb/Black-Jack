@@ -1,11 +1,6 @@
 package blackjack
 import akka.actor._
-
-sealed class Action
-case class HitOrStand(val total : Int, val dealersTotal : Int) extends Action
-case object Hit extends Action
-case object Stand extends Action
-case class GameJoined(val gameName : String) extends Action
+import Messages._
 
 class Player(val name:String) extends Actor with ActorLogging{
   override def receive = {
