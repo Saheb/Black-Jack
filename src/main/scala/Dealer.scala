@@ -1,10 +1,10 @@
-package blackjack
+package main.scala
 
 import akka.actor._
 import scala.collection.mutable.Map
 import scala.collection.mutable.Queue
 
-import blackjack.Messages._
+import Messages._
 
 class Dealer(val gameName : String) extends Actor with ActorLogging{
   

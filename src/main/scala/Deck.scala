@@ -1,4 +1,4 @@
-package blackjack
+package main.scala
 
 import scala.util.Random
 import scala.collection.mutable.Map

@@ -1,4 +1,4 @@
-package blackjack
+package main.scala
 
 // Range of id is from 0 to 51
 class Card(val id : Int) {

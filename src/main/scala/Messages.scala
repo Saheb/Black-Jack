@@ -1,4 +1,4 @@
-package blackjack
+package main.scala
 import akka.actor._
 
 object Messages {

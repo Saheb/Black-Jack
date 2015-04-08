@@ -1,4 +1,4 @@
-package blackjack
+package main.scala
 import akka.actor._
 import Messages._
 
@@ -14,5 +14,7 @@ object GameDriver {
     player2 ! JoinGameOfThisDealer(dealer)
     Thread.sleep(1000)
     dealer ! StartGame("Game#1")
+    Thread.sleep(10000)
+    blackjack.shutdown()
   }
 }
