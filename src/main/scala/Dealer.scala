@@ -24,7 +24,7 @@ class Dealer(val gameName : String) extends Actor with ActorLogging{
         self ! Play
     
     case JoinGame(player) => 
-      log.info("Adding player " + player.path.name + "to Game " + gameName )
+      log.info("Adding player " + player.path.name + " to Game " + gameName )
       scoreMap += (player -> 0)
       statusMap += (player -> "Playing")
       chanceQ.enqueue(player)
@@ -32,7 +32,7 @@ class Dealer(val gameName : String) extends Actor with ActorLogging{
       
     case LeaveGame(player) =>
       scoreMap -= player
-      log.info("Removing player" + player + "from the Game #" + gameName)
+      log.info("Removing player " + player + " from the Game #" + gameName)
     
     case Play =>
       for(i<- 0 to (2*chanceQ.size)-2){
