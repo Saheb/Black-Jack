@@ -44,6 +44,7 @@ class Dealer(val gameName : String) extends Actor with ActorLogging{
         }
        chanceQ.enqueue(chanceQ.dequeue)
        hiddenCard = new Card(deck.pop)
+       log.info("Dealer gets a card, but its hidden and no one knows what's the card. Not even the dealer!")
        self ! Begin
        //println(scoreMap)
        //println(chanceQ)
